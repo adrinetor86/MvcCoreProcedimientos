@@ -121,7 +121,8 @@ public class RepositoryDoctores
     
     public async Task UpdateDoctorEFAsync(string especialidad,int salario)
     {
-        
+        //MILAGRO QUE FUNCIONE, PARA ESTOS CASOS MEJOR HACER
+        //CONSULTA AL CONTEXT EN VEZ DE USAR EL PROCEDURE
          List<Doctor> doctores = await GetDoctoresByEspecialiadAsync(especialidad);
          
          foreach (var doctor in doctores)
