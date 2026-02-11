@@ -10,4 +10,6 @@ public class EnfermosContext :DbContext
     
     public DbSet<Enfermo> Enfermos { get; set; }
     
+    public DbSet<Doctor> Doctores { get; set; }
+ 
 }
