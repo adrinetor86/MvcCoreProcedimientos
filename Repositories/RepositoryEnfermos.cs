@@ -45,8 +45,8 @@ namespace MvcCoreProcedimientos.Repositories;
 public class RepositoryEnfermos
 {
 
-    private EnfermosContext _context;
-    public RepositoryEnfermos(EnfermosContext context)
+    private HospitalContext _context;
+    public RepositoryEnfermos(HospitalContext context)
     {
         _context = context;
     }

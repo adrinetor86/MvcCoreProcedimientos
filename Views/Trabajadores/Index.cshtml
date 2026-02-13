@@ -1,0 +1,56 @@
+@model TrabajadoresModel
+
+@{
+    List<string> oficios = ViewData["OFICIOS"] as List<string>;
+}
+
+<h1>View Trabajadores</h1>
+
+<form method="post">
+    <label for="">Seleccionar Oficio</label>
+    <select name="oficio" class="form-control">
+        @foreach (string oficio in oficios)
+        {
+            <option>@oficio</option>
+        }
+        
+    </select>
+    <button class="btn btn-primary">Buscar Trabajadores</button>
+    
+</form>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        Personas: <b>@Model.Personas</b>
+    </li>  
+    
+    <li class="list-group-item">
+        Media Salarial: <b>@Model.MediaSalarial</b>
+    </li> 
+    
+    <li class="list-group-item">
+        Suma Salarial: <b>@Model.SumaSalarial</b>
+    </li>
+</ul>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Apellido</th>
+        <th>Oficio</th>
+        <th>Salario</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (Trabajador empleado in Model.Trabajadores)
+    {
+        <tr>
+            <td>@empleado.IdTrabajador</td>
+            <td>@empleado.Apellido</td>
+            <td>@empleado.Oficio</td>
+            <td>@empleado.Salario</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -31,9 +31,9 @@ namespace MvcCoreProcedimientos.Repositories;
 
 public class RepositoryDoctores
 {
-    private EnfermosContext _context;
+    private HospitalContext _context;
 
-    public RepositoryDoctores(EnfermosContext context)
+    public RepositoryDoctores(HospitalContext context)
     {
         _context = context;
     }
@@ -65,7 +65,7 @@ public class RepositoryDoctores
 
     public async Task<List<Doctor>> GetDoctorsAsync()
     {
-
+        
         using (DbCommand com = _context.Database.GetDbConnection().CreateCommand())
         {
             var consulta=from datos in _context.Doctores
@@ -77,6 +77,8 @@ public class RepositoryDoctores
             }
             else
             {
+                
+                //NO SE DEBE HACER ASI
                 List<Doctor> doctores = new List<Doctor>();
                 foreach (var row in consulta)
                 {

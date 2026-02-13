@@ -1,0 +1,32 @@
+@model List<VistaEmpleado>
+
+
+
+<h1>Empleados</h1>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Apellido</th>
+        <th>Oficio</th>
+        <th>Salario</th>
+        <th>Departamento</th>
+        <th>Localidad</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (VistaEmpleado empleado in Model)
+    {
+        <tr>
+            <td>@empleado.Id</td>
+            <td>@empleado.Apellido</td>
+            <td>@empleado.Oficio</td>
+            <td>@empleado.Salario</td>
+            <td>@empleado.Departamento</td>
+            <td>@empleado.Localidad</td>
+        </tr>
+    }
+    </tbody>
+</table>
